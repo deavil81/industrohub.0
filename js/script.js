@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbz9VFwKdlJoX0KaQNQB4hbELExoaK2waTBYCgCY0eHqTf8sxkL9YkxGZnaLy6s7x34EXw/exec";
+const scriptURL =https://script.google.com/macros/s/AKfycbxuqarRFEjIWfQjWta68JXrJo9udH9SJAYbr-vDcX-TwhXAYafVSxhfZ1A6oH_msNFLuw/exec;
 
 document.getElementById("rfqForm").addEventListener("submit", function(e) {
 
@@ -21,3 +21,4 @@ document.getElementById("rfqForm").addEventListener("submit", function(e) {
   });
 
 });
+
