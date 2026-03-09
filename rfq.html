@@ -11,44 +11,35 @@
 
 <h1>Post Your Requirement</h1>
 
-<form>
+<form id="rfqForm">
 
-<label>Product Name</label>
-<input type="text" required>
+<input type="text" name="product" placeholder="Product Name" required>
 
-<label>Category</label>
-<select>
+<select name="category">
 <option>Steel</option>
 <option>Fabrication</option>
 <option>Machining</option>
 <option>Industrial Tools</option>
 </select>
 
-<label>Specification</label>
-<input type="text">
+<input type="text" name="specification" placeholder="Specification">
 
-<label>Quantity</label>
-<input type="text">
+<input type="text" name="quantity" placeholder="Quantity">
 
-<label>Location</label>
-<input type="text">
+<input type="text" name="location" placeholder="Location">
 
-<label>Delivery Time</label>
-<input type="text">
+<input type="text" name="delivery" placeholder="Delivery Time">
 
-<label>Description</label>
-<textarea></textarea>
+<textarea name="description" placeholder="Description"></textarea>
 
-<label>Phone Number</label>
-<input type="text">
+<input type="text" name="phone" placeholder="Phone Number">
 
-<br><br>
-
-<button class="btn-primary">Submit RFQ</button>
+<button type="submit">Submit RFQ</button>
 
 </form>
 
 </div>
 
 </body>
+
 </html>
