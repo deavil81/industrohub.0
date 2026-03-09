@@ -1,4 +1,4 @@
-const sheetURL = "YOUR_GOOGLE_SHEET_PUBLIC_JSON";
+const sheetURL = "https://script.google.com/macros/s/AKfycbxuqarRFEjIWfQjWta68JXrJo9udH9SJAYbr-vDcX-TwhXAYafVSxhfZ1A6oH_msNFLuw/exec";
 
 fetch(sheetURL)
 .then(res => res.json())
