@@ -1,25 +1,29 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbxuqarRFEjIWfQjWta68JXrJo9udH9SJAYbr-vDcX-TwhXAYafVSxhfZ1A6oH_msNFLuw/exec";
 
-document.getElementById("rfqForm").addEventListener("submit", function(e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-  e.preventDefault();
+  const form = document.getElementById("rfqForm");
 
-  const formData = new FormData(this);
+  form.addEventListener("submit", function(e) {
 
-  const data = Object.fromEntries(formData.entries());
+    e.preventDefault();
 
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(response => {
-    alert("RFQ submitted successfully!");
-    document.getElementById("rfqForm").reset();
-  })
-  .catch(error => {
-    alert("Error submitting RFQ");
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      alert("RFQ submitted successfully!");
+      form.reset();
+    })
+    .catch(error => {
+      alert("Error submitting RFQ");
+      console.error(error);
+    });
+
   });
 
 });
-
-
