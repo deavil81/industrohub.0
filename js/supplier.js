@@ -26,5 +26,4 @@ fetch(sheetURL)
 
     });
 
-  })
-  .catch(error => console.error("Error loading RFQs:", error));
+  });
