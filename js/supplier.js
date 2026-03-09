@@ -1,20 +1,30 @@
 const sheetURL = "https://script.google.com/macros/s/AKfycbxuqarRFEjIWfQjWta68JXrJo9udH9SJAYbr-vDcX-TwhXAYafVSxhfZ1A6oH_msNFLuw/exec";
 
 fetch(sheetURL)
-.then(res => res.json())
-.then(data => {
+  .then(response => response.text())
+  .then(csv => {
 
-  const table = document.getElementById("rfqTable");
+    const rows = csv.split("\n").slice(1);
+    const table = document.getElementById("rfqTable");
 
-  data.forEach(rfq => {
+    rows.forEach(row => {
 
-    const row = table.insertRow();
+      if(row.trim() === "") return;
 
-    row.insertCell(0).innerText = rfq.product;
-    row.insertCell(1).innerText = rfq.category;
-    row.insertCell(2).innerText = rfq.quantity;
-    row.insertCell(3).innerText = rfq.location;
+      const cols = row.split(",");
 
-  });
+      const tr = document.createElement("tr");
 
-});
+      tr.innerHTML = `
+        <td>${cols[1]}</td>
+        <td>${cols[2]}</td>
+        <td>${cols[4]}</td>
+        <td>${cols[5]}</td>
+      `;
+
+      table.appendChild(tr);
+
+    });
+
+  })
+  .catch(error => console.error("Error loading RFQs:", error));
