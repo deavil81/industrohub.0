@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(data)
     })
     .then(response => {
-      alert("RFQ submitted successfully!");
+      document.getElementById("successMessage").style.display = "block";
       form.reset();
     })
     .catch(error => {
@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
