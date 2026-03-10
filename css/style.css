@@ -260,7 +260,55 @@ text-decoration:none;
 font-weight:600;
 color:#1e3a8a;
 }
+/* RFQ PAGE */
 
+.rfq-section{
+padding:80px 0;
+background:#eef2f7;
+}
+
+.rfq-section h1{
+margin-bottom:10px;
+}
+
+.rfq-subtext{
+color:#555;
+margin-bottom:30px;
+}
+
+.rfq-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.rfq-grid-form{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-bottom:15px;
+}
+
+.rfq-card input,
+.rfq-card select,
+.rfq-card textarea{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+}
+
+.rfq-card textarea{
+height:100px;
+margin-bottom:15px;
+}
+
+.rfq-card button{
+margin-top:10px;
+}
 .view-link:hover{
 text-decoration:underline;
 }
+
