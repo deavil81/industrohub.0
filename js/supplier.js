@@ -5,7 +5,7 @@ fetch(sheetURL)
   .then(csv => {
 
     const rows = csv.split("\n").slice(1);
-    const table = document.getElementById("rfqTable");
+    const container = document.getElementById("rfqContainer");
 
     rows.forEach(row => {
 
@@ -13,16 +13,23 @@ fetch(sheetURL)
 
       const cols = row.split(",");
 
-      const tr = document.createElement("tr");
+      const product = cols[1];
+      const category = cols[2];
+      const quantity = cols[4];
+      const location = cols[5];
 
-      tr.innerHTML = `
-        <td>${cols[1]}</td>
-        <td>${cols[2]}</td>
-        <td>${cols[4]}</td>
-        <td>${cols[5]}</td>
+      const card = document.createElement("div");
+      card.className = "rfq-card";
+
+      card.innerHTML = `
+        <h3>${product}</h3>
+        <p><strong>Category:</strong> ${category}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+        <p><strong>Location:</strong> ${location}</p>
+        <a class="quote-btn" href="https://wa.me/" target="_blank">Send Quote</a>
       `;
 
-      table.appendChild(tr);
+      container.appendChild(card);
 
     });
 
