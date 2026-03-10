@@ -4,10 +4,10 @@ fetch(sheetURL)
   .then(response => response.text())
   .then(csv => {
 
-    const rows = csv.split("\n").slice(1);
+    const rows = csv.split("\n").slice(1).reverse(); // newest first
     const container = document.getElementById("rfqContainer");
 
-    rows.forEach(row => {
+    rows.slice(0,10).forEach(row => { // show only 10 RFQs
 
       if(row.trim() === "") return;
 
@@ -17,6 +17,7 @@ fetch(sheetURL)
       const category = cols[2];
       const quantity = cols[4];
       const location = cols[5];
+      const phone = cols[8];
 
       const card = document.createElement("div");
       card.className = "rfq-card";
@@ -26,7 +27,7 @@ fetch(sheetURL)
         <p><strong>Category:</strong> ${category}</p>
         <p><strong>Quantity:</strong> ${quantity}</p>
         <p><strong>Location:</strong> ${location}</p>
-        <a class="quote-btn" href="https://wa.me/" target="_blank">Send Quote</a>
+        <a class="quote-btn" href="https://wa.me/91${phone}" target="_blank">Send Quote</a>
       `;
 
       container.appendChild(card);
