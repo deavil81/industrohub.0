@@ -27,7 +27,11 @@ fetch(sheetURL)
         <p><strong>Category:</strong> ${category}</p>
         <p><strong>Quantity:</strong> ${quantity}</p>
         <p><strong>Location:</strong> ${location}</p>
-        <a class="quote-btn" href="https://wa.me/91${phone}" target="_blank">Send Quote</a>
+        <a class="quote-btn" 
+href="https://wa.me/91${phone}?text=Hello, I saw your RFQ for ${product} on IndustroHub." 
+target="_blank">
+Send Quote
+</a>
       `;
 
       container.appendChild(card);
