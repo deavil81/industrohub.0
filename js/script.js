@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbyB2vTegPXTJI9EAQjbzQg1JhfXVtaa7pBivaLLEsPLJsj6VREe9bIq8sDrUhJwp-M5VQ/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyd4rumCzxgTpeyrAR0iYiM-BUIO1xVMWP0R5vMxv4T5bL3x5eMXxAqxZ1EfqK0ocWG3A/exec";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -36,4 +36,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
 
