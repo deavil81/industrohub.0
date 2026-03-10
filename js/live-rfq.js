@@ -14,6 +14,7 @@ if(row.trim() === "") return;
 const cols = row.split(",");
 
 const product = cols[1];
+const category = cols[2];
 const quantity = cols[4];
 const location = cols[5];
 
@@ -23,6 +24,7 @@ card.className = "rfq-card";
 
 card.innerHTML = `
 <h3>${product}</h3>
+<p><strong>Category:</strong> ${category}</p>
 <p><strong>Quantity:</strong> ${quantity}</p>
 <p><strong>Location:</strong> ${location}</p>
 `;
