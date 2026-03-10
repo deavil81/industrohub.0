@@ -2,16 +2,46 @@
 <html>
 <head>
 <title>Post RFQ</title>
+
 <link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+<header>
+<div class="container nav">
+
+<h2>IndustroHub</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="rfq.html">Post RFQ</a>
+<a href="supplier-rfq.html">Suppliers</a>
+<a href="about.html">About</a>
+</nav>
+
+</div>
+</header>
+
+
+<section class="rfq-section">
+
 <div class="container">
 
-<h1>Post Your Requirement</h1>
+<h1>Post Your Industrial Requirement</h1>
+
+<p class="rfq-subtext">
+Describe your requirement and suppliers will contact you with quotations.
+</p>
+
+<div class="rfq-card">
 
 <form id="rfqForm">
+
+<div class="rfq-grid-form">
 
 <input type="text" name="product" placeholder="Product Name" required>
 
@@ -30,20 +60,23 @@
 
 <input type="text" name="delivery" placeholder="Delivery Time">
 
+</div>
+
 <textarea name="description" placeholder="Description"></textarea>
 
 <input type="text" name="phone" placeholder="Phone Number">
 
-<button type="submit">Submit RFQ</button>
+<button type="submit" class="btn-primary">Submit RFQ</button>
 
 </form>
-<div id="successMessage" style="display:none; color:green; margin-top:15px;">
-RFQ submitted successfully! Our suppliers will contact you soon.
+
 </div>
+
 </div>
+
+</section>
+
 <script src="js/script.js"></script>
+
 </body>
-
 </html>
-
-
