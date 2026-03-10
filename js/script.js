@@ -1,4 +1,4 @@
-const scriptURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRGRI3CQpD0SKmXh_NAFup01vfjg3JSKavij6PA8fNvZrGfLhIXAlnbQ6H2d9S37_45aVPiu141vdF/pub?output=csv";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyB2vTegPXTJI9EAQjbzQg1JhfXVtaa7pBivaLLEsPLJsj6VREe9bIq8sDrUhJwp-M5VQ/exec";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -36,3 +36,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
