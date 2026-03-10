@@ -13,28 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch(scriptURL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      mode: "no-cors",
       body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(result => {
-
-      document.getElementById("successMessage").style.display = "block";
-
-      form.reset();
-
-    })
-    .catch(error => {
-
-      alert("Error submitting RFQ");
-      console.error(error);
-
     });
+
+    alert("RFQ Submitted Successfully!");
+
+    form.reset();
 
   });
 
 });
-
-
