@@ -247,3 +247,20 @@ font-size:14px;
 .footer a:hover{
 text-decoration:underline;
 }
+
+.rfq-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.view-link{
+text-decoration:none;
+font-weight:600;
+color:#1e3a8a;
+}
+
+.view-link:hover{
+text-decoration:underline;
+}
