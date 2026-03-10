@@ -150,3 +150,7 @@ transform:translateY(-5px);
 box-shadow:0 8px 18px rgba(0,0,0,0.12);
 }
 
+.rfq-live{
+padding:60px 0;
+background:white;
+}
