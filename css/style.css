@@ -1,5 +1,5 @@
 body{
-font-family: Arial, sans-serif;
+font-family: 'Inter', sans-serif;
 margin:0;
 background:#f5f7fa;
 color:#333;
@@ -180,3 +180,4 @@ transition:all 0.2s ease;
 background:#1e3a8a;
 color:white;
 }
+
