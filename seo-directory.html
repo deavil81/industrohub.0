@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Industrial Suppliers Directory | IndustroHub</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<header style="background:#0f172a;color:white;padding:20px;">
+<h2>IndustroHub</h2>
+</header>
+
+
+<section style="padding:40px;max-width:900px;margin:auto;">
+
+<h1>Industrial Suppliers Directory</h1>
+
+<p>
+Browse industrial materials and services across Gujarat.
+Find suppliers or post your requirement on IndustroHub.
+</p>
+
+<div id="seoLinks"></div>
+
+</section>
+
+
+
+<script>
+
+const products = [
+"ms-rod",
+"ms-pipe",
+"steel-plate",
+"steel-angle",
+"steel-channel",
+"fabrication-service",
+"machine-shop",
+"laser-cutting",
+"cnc-machining",
+"sheet-metal"
+]
+
+const cities = [
+"vadodara",
+"bharuch",
+"ankleshwar",
+"savli-gidc",
+"makarpura-gidc",
+"halol",
+"dahej",
+"surat",
+"ahmedabad",
+"vapi"
+]
+
+const container = document.getElementById("seoLinks")
+
+cities.forEach(city => {
+
+const cityTitle = city.replaceAll("-", " ").replace(/\b\w/g,l=>l.toUpperCase())
+
+const section = document.createElement("div")
+
+section.innerHTML = `<h2>${cityTitle}</h2>`
+
+const list = document.createElement("ul")
+
+products.forEach(product => {
+
+const productTitle = product.replaceAll("-", " ").replace(/\b\w/g,l=>l.toUpperCase())
+
+const li = document.createElement("li")
+
+li.innerHTML = `
+<a href="product.html?item=${product}&city=${city}">
+${productTitle} Supplier ${cityTitle}
+</a>
+`
+
+list.appendChild(li)
+
+})
+
+section.appendChild(list)
+
+container.appendChild(section)
+
+})
+
+</script>
+
+
+
+</body>
+
+</html>
