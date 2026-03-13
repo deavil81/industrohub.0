@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title id="pageTitle"></title>
+<title id="pageTitle">Industrial Supplier | IndustroHub</title>
 
 <meta name="description" id="metaDesc">
 
@@ -13,13 +14,18 @@
 
 </head>
 
+
 <body>
 
-<header>
+<header style="background:#0f172a;color:white;padding:20px;">
+
 <h2>IndustroHub</h2>
+
 </header>
 
-<section class="container">
+
+
+<section style="padding:40px;max-width:900px;margin:auto;">
 
 <h1 id="heading"></h1>
 
@@ -27,9 +33,87 @@
 
 <p id="text2"></p>
 
-<a href="rfq.html">Post Requirement</a>
+<div style="margin-top:20px;">
+
+<a href="rfq.html" style="
+background:#2563eb;
+color:white;
+padding:12px 20px;
+text-decoration:none;
+border-radius:6px;
+">
+Post Requirement
+</a>
+
+</div>
 
 </section>
+
+
+
+<section style="background:#f1f5f9;padding:40px;">
+
+<div style="max-width:900px;margin:auto;">
+
+<h2>Why Use IndustroHub?</h2>
+
+<ul>
+
+<li>Connect with verified industrial suppliers</li>
+
+<li>Receive multiple supplier quotations</li>
+
+<li>Compare prices easily</li>
+
+<li>Save time sourcing industrial materials</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<section style="padding:40px;">
+
+<div style="max-width:900px;margin:auto;">
+
+<h2>Latest Industrial Requirements</h2>
+
+<div id="liveRFQs"></div>
+
+</div>
+
+</section>
+
+
+
+<section style="background:#f8fafc;padding:40px;">
+
+<div style="max-width:900px;margin:auto;">
+
+<h2>Related Searches</h2>
+
+<ul id="relatedLinks"></ul>
+
+</div>
+
+</section>
+
+
+
+<footer style="background:#0f172a;color:white;padding:20px;text-align:center;">
+
+<p>© 2026 IndustroHub</p>
+
+</footer>
+
+
+
+<script src="js/live-rfq.js"></script>
+
+
 
 <script>
 
@@ -40,29 +124,62 @@ const city = params.get("city")
 
 if(item && city){
 
-const title = item.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase())
+const product = item.replaceAll("-", " ")
 const cityName = city.replaceAll("-", " ")
 
+const productTitle = product.replace(/\b\w/g, l => l.toUpperCase())
+const cityTitle = cityName.replace(/\b\w/g, l => l.toUpperCase())
+
 document.getElementById("pageTitle").innerText =
-title + " supplier " + cityName + " | IndustroHub"
+productTitle + " Supplier in " + cityTitle + " | IndustroHub"
 
 document.getElementById("metaDesc").setAttribute(
 "content",
-"Looking for " + title + " suppliers in " + cityName + "? Post your requirement on IndustroHub and receive quotations."
+"Looking for " + productTitle + " suppliers in " + cityTitle + "? Post your requirement on IndustroHub and receive supplier quotations quickly."
 )
 
 document.getElementById("heading").innerText =
-title + " Supplier in " + cityName
+productTitle + " Supplier in " + cityTitle
 
 document.getElementById("text1").innerText =
-title + " is widely used in fabrication, construction, and manufacturing industries."
+productTitle + " is widely used in fabrication, construction, and manufacturing industries across " + cityTitle + "."
 
 document.getElementById("text2").innerText =
-"Looking for " + title + " suppliers in " + cityName + "? Post your requirement on IndustroHub and receive supplier offers quickly."
+"Industries in " + cityTitle + " often require reliable " + productTitle + " suppliers for engineering and industrial projects. Post your requirement on IndustroHub and receive supplier quotations quickly."
+
+
+const related = document.getElementById("relatedLinks")
+
+const relatedProducts = [
+"ms-rod",
+"ms-pipe",
+"steel-plate",
+"fabrication-service",
+"machine-shop"
+]
+
+relatedProducts.forEach(p => {
+
+if(p !== item){
+
+const li = document.createElement("li")
+
+const name = p.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase())
+
+li.innerHTML = `<a href="product.html?item=${p}&city=${city}">${name} Supplier ${cityTitle}</a>`
+
+related.appendChild(li)
+
+}
+
+})
 
 }
 
 </script>
 
+
+
 </body>
+
 </html>
