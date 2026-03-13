@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="pageTitle"></title>
+
+<meta name="description" id="metaDesc">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+<h2>IndustroHub</h2>
+</header>
+
+<section class="container">
+
+<h1 id="heading"></h1>
+
+<p id="text1"></p>
+
+<p id="text2"></p>
+
+<a href="rfq.html">Post Requirement</a>
+
+</section>
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+
+const item = params.get("item")
+const city = params.get("city")
+
+if(item && city){
+
+const title = item.replaceAll("-", " ")
+const cityName = city.replaceAll("-", " ")
+
+document.getElementById("pageTitle").innerText =
+title + " supplier " + cityName + " | IndustroHub"
+
+document.getElementById("metaDesc").setAttribute(
+"content",
+"Looking for " + title + " suppliers in " + cityName + "? Post your requirement on IndustroHub and receive quotations."
+)
+
+document.getElementById("heading").innerText =
+title + " Supplier in " + cityName
+
+document.getElementById("text1").innerText =
+title + " is widely used in fabrication, construction, and manufacturing industries."
+
+document.getElementById("text2").innerText =
+"Looking for " + title + " suppliers in " + cityName + "? Post your requirement on IndustroHub and receive supplier offers quickly."
+
+}
+
+</script>
+
+</body>
+</html>
