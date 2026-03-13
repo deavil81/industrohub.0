@@ -40,7 +40,7 @@ const city = params.get("city")
 
 if(item && city){
 
-const title = item.replaceAll("-", " ")
+const title = item.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase())
 const cityName = city.replaceAll("-", " ")
 
 document.getElementById("pageTitle").innerText =
