@@ -97,13 +97,14 @@ const section = document.createElement("div")
 
 section.innerHTML = `<h2>${cityTitle}</h2>`
 
-const list = document.createElement("ul")
-
+const list = document.createElement("div")
+list.className = "grid"
 products.forEach(product => {
 
 const productTitle = product.replaceAll("-", " ").replace(/\b\w/g,l=>l.toUpperCase())
 
-const li = document.createElement("li")
+const li = document.createElement("div")
+li.className = "card"
 
 li.innerHTML = `
 <a href="product.html?item=${product}&city=${city}">
