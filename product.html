@@ -14,15 +14,11 @@
 
 </head>
 
-
 <body>
 
 <header style="background:#0f172a;color:white;padding:20px;">
-
 <h2>IndustroHub</h2>
-
 </header>
-
 
 
 <section style="padding:40px;max-width:900px;margin:auto;">
@@ -34,7 +30,6 @@
 <p id="text2"></p>
 
 <div style="margin-top:20px;">
-
 <a href="rfq.html" style="
 background:#2563eb;
 color:white;
@@ -44,7 +39,6 @@ border-radius:6px;
 ">
 Post Requirement
 </a>
-
 </div>
 
 </section>
@@ -58,15 +52,10 @@ Post Requirement
 <h2>Why Use IndustroHub?</h2>
 
 <ul>
-
 <li>Connect with verified industrial suppliers</li>
-
 <li>Receive multiple supplier quotations</li>
-
 <li>Compare prices easily</li>
-
 <li>Save time sourcing industrial materials</li>
-
 </ul>
 
 </div>
@@ -101,20 +90,24 @@ Post Requirement
 
 </section>
 
+
+
+<section style="padding:40px;">
+
+<div style="max-width:900px;margin:auto;">
+
 <h2>Frequently Asked Questions</h2>
 
 <div id="faqSection"></div>
-<p><strong>How to find {{product}} suppliers in {{city}}?</strong></p>
-<p>You can post your industrial requirement on IndustroHub and receive quotations from suppliers.</p>
 
-<p><strong>What industries use {{product}}?</strong></p>
-<p>{{product}} is commonly used in fabrication, construction, and manufacturing industries.</p>
+</div>
+
+</section>
+
 
 
 <footer style="background:#0f172a;color:white;padding:20px;text-align:center;">
-
 <p>© 2026 IndustroHub</p>
-
 </footer>
 
 
@@ -156,6 +149,8 @@ document.getElementById("text2").innerText =
 "Industries in " + cityTitle + " often require reliable " + productTitle + " suppliers for engineering and industrial projects. Post your requirement on IndustroHub and receive supplier quotations quickly."
 
 
+/* Related Searches */
+
 const related = document.getElementById("relatedLinks")
 
 const relatedProducts = [
@@ -174,7 +169,10 @@ const li = document.createElement("li")
 
 const name = p.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase())
 
-li.innerHTML = `<a href="product.html?item=${p}&city=${city}">${name} Supplier ${cityTitle}</a>`
+li.innerHTML =
+`<a href="product.html?item=${p}&city=${city}">
+${name} Supplier ${cityTitle}
+</a>`
 
 related.appendChild(li)
 
@@ -182,12 +180,27 @@ related.appendChild(li)
 
 })
 
+
+/* FAQ Section */
+
+const faq = document.getElementById("faqSection")
+
+faq.innerHTML = `
+
+<p><strong>How to find ${productTitle} suppliers in ${cityTitle}?</strong></p>
+<p>You can post your industrial requirement on IndustroHub and receive quotations from suppliers in ${cityTitle}.</p>
+
+<p><strong>What industries use ${productTitle}?</strong></p>
+<p>${productTitle} is commonly used in fabrication, construction, engineering, and manufacturing industries.</p>
+
+<p><strong>How to get price for ${productTitle} in ${cityTitle}?</strong></p>
+<p>Post your requirement on IndustroHub and multiple suppliers will respond with pricing and delivery details.</p>
+
+`
+
 }
 
 </script>
 
-
-
 </body>
-
 </html>
