@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Post RFQ</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Post RFQ | IndustroHub</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -9,22 +14,28 @@
 
 </head>
 
+
+
 <body>
 
 <header>
+
 <div class="container nav">
 
-<h2>IndustroHub</h2>
+<h2 class="logo">IndustroHub</h2>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="rfq.html">Post RFQ</a>
-<a href="supplier-rfq.html">Suppliers</a>
+<a href="supplier.html">Suppliers</a>
+<a href="supplier-rfq.html">View RFQs</a>
 <a href="about.html">About</a>
 </nav>
 
 </div>
+
 </header>
+
 
 
 <section class="rfq-section">
@@ -34,8 +45,10 @@
 <h1>Post Your Industrial Requirement</h1>
 
 <p class="rfq-subtext">
-Describe your requirement and suppliers will contact you with quotations.
+Describe your requirement and receive supplier quotations quickly.
 </p>
+
+
 
 <div class="rfq-card">
 
@@ -69,18 +82,65 @@ Describe your requirement and suppliers will contact you with quotations.
 <button type="submit" class="btn-primary">Submit RFQ</button>
 
 </form>
-<h2>Latest Industrial Requirements</h2>
-<div id="rfq-container"></div>
+
 </div>
-<div id="successMessage" style="display:none; margin-top:20px; color:green; font-weight:600;">
+
+
+
+<div id="successMessage"
+style="display:none; margin-top:20px; color:green; font-weight:600;">
 ✅ RFQ Submitted Successfully. Suppliers will contact you soon.
 </div>
+
 </div>
 
 </section>
 
+
+
+<section class="rfq-live">
+
+<div class="container">
+
+<div class="rfq-header">
+
+<h2>Latest Industrial Requirements</h2>
+
+<a href="supplier-rfq.html" class="view-link">View All →</a>
+
+</div>
+
+<div id="rfq-container" class="rfq-grid"></div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="container footer">
+
+<p>© 2026 IndustroHub</p>
+
+<div>
+<a href="index.html">Home</a>
+<a href="rfq.html">Post RFQ</a>
+<a href="supplier.html">Suppliers</a>
+<a href="about.html">About</a>
+</div>
+
+</div>
+
+</footer>
+
+
+
 <script src="js/script.js"></script>
 
-</body>
-</html>
+<script src="js/live-rfq.js"></script>
 
+</body>
+
+</html>
