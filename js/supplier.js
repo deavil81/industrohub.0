@@ -2,25 +2,25 @@ const sheetURL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRGRI3CQpD0SKmXh_NAFup01vfjg3JSKavij6PA8fNvZrGfLhIXAlnbQ6H2d9S37_45aVPiu141vdF/pub?output=csv";
 
 fetch(sheetURL)
-.then(res => res.text())
-.then(csv => {
+.then(response => response.text())
+.then(data => {
 
-const rows = csv.split("\n").slice(1).reverse();
+const rows = data.split("\n").slice(1).reverse();
+
 const container = document.getElementById("rfqTable");
 
 rows.forEach(row => {
 
-if(row.trim() === "") return;
+if(!row.trim()) return;
 
 const cols = row.split(",");
 
-const product = cols[1];
-const category = cols[2];
-const quantity = cols[4];
-const location = cols[5];
+const product = cols[1] || "N/A";
+const category = cols[2] || "N/A";
+const quantity = cols[4] || "N/A";
+const location = cols[5] || "N/A";
 
 const card = document.createElement("div");
-
 card.className = "rfq-card";
 
 card.innerHTML = `
@@ -35,4 +35,7 @@ container.appendChild(card);
 
 });
 
+})
+.catch(error => {
+console.log("RFQ Load Error:", error);
 });
