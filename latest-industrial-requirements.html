@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Latest Industrial Requirements in Gujarat | IndustroHub</title>
+
+<meta name="description"
+content="Browse the latest steel, fabrication, machining and industrial material requirements in Gujarat. Suppliers can send quotations and connect with buyers instantly.">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* Page layout */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* RFQ grid */
+
+.rfq-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:18px;
+margin-top:30px;
+}
+
+/* RFQ card */
+
+.rfq-card{
+background:white;
+border-radius:10px;
+padding:18px;
+box-shadow:0 3px 10px rgba(0,0,0,0.06);
+border-left:4px solid #2563eb;
+}
+
+/* Title */
+
+.rfq-title{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+/* Info row */
+
+.rfq-info{
+font-size:14px;
+color:#475569;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin-bottom:12px;
+}
+
+/* CTA */
+
+.rfq-action a{
+background:#2563eb;
+color:white;
+padding:8px 14px;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+}
+
+.rfq-action a:hover{
+background:#1d4ed8;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<header style="background:#0f172a;color:white;padding:20px">
+<h2>IndustroHub</h2>
+</header>
+
+
+
+<section class="container">
+
+<h1>Latest Industrial Material Requirements in Gujarat</h1>
+
+<p>
+Browse the latest steel, fabrication, machining, and industrial material requirements from buyers across Gujarat including Vadodara, Bharuch, Ankleshwar, Surat, and Ahmedabad.
+Suppliers can send quotations and connect directly with buyers.
+</p>
+
+<div id="rfqBoard" class="rfq-grid"></div>
+
+</section>
+
+
+
+<footer style="background:#0f172a;color:white;padding:20px;text-align:center">
+© 2026 IndustroHub
+</footer>
+
+
+
+<script>
+
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vQRGRI3CQpD0SKmXh_NAFup01vfjg3JSKavij6PA8fNvZrGfLhIXAlnbQ6H2d9S37_45aVPiu141vdF/pub?output=csv";
+
+fetch(sheetURL)
+.then(res => res.text())
+.then(csv => {
+
+const rows = csv.split("\n").slice(1).reverse()
+
+const container = document.getElementById("rfqBoard")
+
+rows.slice(0,20).forEach(row => {
+
+if(row.trim() === "") return
+
+const cols = row.split(",")
+
+const product = cols[1]
+const category = cols[2]
+const quantity = cols[4]
+const location = cols[5]
+
+const card = document.createElement("div")
+
+card.className = "rfq-card"
+
+card.innerHTML = `
+<div class="rfq-title">${product}</div>
+
+<div class="rfq-info">
+<span>Category: ${category}</span>
+<span>Quantity: ${quantity}</span>
+<span>Location: ${location}</span>
+</div>
+
+<div class="rfq-action">
+<a href="rfq.html">Send Quote</a>
+</div>
+`
+
+container.appendChild(card)
+
+})
+
+})
+
+</script>
+
+</body>
+
+</html>
