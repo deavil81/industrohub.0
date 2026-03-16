@@ -8,31 +8,102 @@
 
 <title>Industrial Suppliers Directory | IndustroHub</title>
 
+<meta name="description" content="Find industrial suppliers and fabrication services across major industrial cities like Vadodara, Bharuch, Ankleshwar, Surat, and Ahmedabad.">
+
 <link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header style="background:#0f172a;color:white;padding:20px;">
-<h2>IndustroHub</h2>
+<header>
+
+<div class="container nav">
+
+<h2 class="logo">IndustroHub</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="rfq.html">Post RFQ</a>
+<a href="supplier.html">Suppliers</a>
+<a href="supplier-rfq.html">View RFQs</a>
+<a href="about.html">About</a>
+</nav>
+
+</div>
+
 </header>
 
 
-<section style="padding:40px;max-width:1000px;margin:auto">
+
+<section style="padding:60px 20px">
+
+<div class="container">
 
 <h1>Industrial Suppliers Directory</h1>
 
-<p>Browse industrial suppliers and service providers across major industrial cities.</p>
+<p style="max-width:700px;margin-top:10px;color:#555">
 
-<div id="seoLinks"></div>
+Browse industrial suppliers and service providers across major industrial cities in Gujarat.  
+Find steel suppliers, fabrication workshops, CNC machining services, and sheet metal manufacturers.
+
+</p>
+
+</div>
 
 </section>
 
 
-<footer style="background:#0f172a;color:white;padding:20px;text-align:center">
-© 2026 IndustroHub
+
+<section>
+
+<div class="container">
+
+<div id="seoLinks"></div>
+
+</div>
+
+</section>
+
+
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Need Industrial Suppliers?</h2>
+
+<p>Post your requirement and receive quotations from suppliers.</p>
+
+<a class="btn-primary" href="rfq.html">Post Requirement</a>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="container footer">
+
+<p>© 2026 IndustroHub</p>
+
+<div>
+
+<a href="index.html">Home</a>
+<a href="rfq.html">Post RFQ</a>
+<a href="supplier.html">Suppliers</a>
+<a href="about.html">About</a>
+
+</div>
+
+</div>
+
 </footer>
+
 
 
 <script>
@@ -71,11 +142,19 @@ const container = document.getElementById("seoLinks")
 cities.forEach(city => {
 
 const cityTitle = city.replaceAll("-", " ")
-const cityHeader = document.createElement("h2")
 
-cityHeader.innerText = cityTitle.toUpperCase()
+const section = document.createElement("div")
 
-container.appendChild(cityHeader)
+section.style.marginBottom = "40px"
+
+section.innerHTML = `
+<h2>Industrial Suppliers in ${cityTitle.replace(/\b\w/g,l=>l.toUpperCase())}</h2>
+
+<p style="color:#555;max-width:700px">
+Find steel suppliers, fabrication services, and machining workshops in ${cityTitle.replace(/\b\w/g,l=>l.toUpperCase())}.
+Browse supplier categories below or post your requirement to receive quotations.
+</p>
+`
 
 const ul = document.createElement("ul")
 
@@ -95,11 +174,14 @@ ul.appendChild(li)
 
 })
 
-container.appendChild(ul)
+section.appendChild(ul)
+
+container.appendChild(section)
 
 })
 
 </script>
 
 </body>
+
 </html>
