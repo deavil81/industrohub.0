@@ -18,15 +18,23 @@ const category = cols[2];
 const quantity = cols[4];
 const location = cols[5];
 
+
 const card = document.createElement("div");
 
 card.className = "rfq-card";
 
 card.innerHTML = `
-<h3>${product}</h3>
-<p><strong>Category:</strong> ${category}</p>
-<p><strong>Quantity:</strong> ${quantity}</p>
-<p><strong>Location:</strong> ${location}</p>
+<div class="rfq-title">${product}</div>
+
+<div class="rfq-info">
+<span>📦 ${category}</span>
+<span>⚖️ ${quantity}</span>
+<span>📍 ${location}</span>
+</div>
+
+<div class="rfq-action">
+<a href="rfq.html">Send Quote</a>
+</div>
 `;
 
 container.appendChild(card);
