@@ -1,113 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Suppliers Directory Gujarat | MS Rod, Pipes & Fabrication</title>
+    <meta name="description" content="Find verified industrial suppliers in Gujarat. Directory for MS Rods, Steel Pipes, CNC Machining, and Fabrication services in Vadodara, Ahmedabad, Surat, and GIDC areas.">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Industrial Suppliers Directory | IndustroHub</title>
-
-<link rel="stylesheet" href="css/style.css">
-<style>
-
-.city-section{
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-
-.card{
-background:#f1f5f9;
-padding:14px;
-border-radius:8px;
-}
-
-.card a{
-text-decoration:none;
-color:#1e3a8a;
-font-weight:500;
-}
-
-</style>
+    <style>
+        :root { --primary: #1e3a8a; --bg: #f8fafc; --text: #0f172a; }
+        body { font-family: system-ui, sans-serif; line-height: 1.5; color: var(--text); margin: 0; background: #fff; }
+        
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .city-section { margin-top: 50px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+        .city-title { color: var(--primary); font-size: 1.75rem; margin-bottom: 20px; text-transform: capitalize; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 15px; 
+        }
+        
+        .card { 
+            background: var(--bg); 
+            padding: 12px 16px; 
+            border-radius: 6px; 
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+        .card a { text-decoration: none; color: var(--primary); font-weight: 500; font-size: 0.95rem; display: block; }
+        
+        .intro-text { font-size: 1.1rem; color: #475569; margin-bottom: 30px; }
+    </style>
 </head>
-
-
 <body>
 
-<header style="background:#0f172a;color:white;padding:20px;">
-<h2>IndustroHub</h2>
+<header style="background:#0f172a; color:white; padding:20px 0;">
+    <div class="container">
+        <strong style="font-size: 1.5rem;">IndustroHub</strong>
+    </div>
 </header>
 
+<main class="container">
+    <section>
+        <h1>Industrial materials & Services Directory: Gujarat</h1>
+        <p class="intro-text">
+            Connect with leading **steel trading agencies** and industrial service providers. 
+            Select a category below to find verified suppliers for MS materials, CNC services, and fabrication across major Gujarat GIDC hubs.
+        </p>
+    </section>
 
-<section style="padding:40px;max-width:900px;margin:auto;">
-
-<h1>Industrial Suppliers Directory</h1>
-
-<p>
-Browse industrial materials and services across Gujarat.
-Find suppliers or post your requirement on IndustroHub.
-</p>
-
-<div id="seoLinks"></div>
-
-</section>
-
-
+    <div id="seoLinks"></div>
+</main>
 
 <script>
+const products = ["ms-rod", "ms-pipe", "steel-plate", "steel-angle", "steel-channel", "steel-flat", "steel-round-bar", "gi-pipe", "ss-plate", "ss-rod", "sheet-metal", "laser-cutting", "cnc-machining", "fabrication-service", "machine-shop", "metal-cutting", "steel-fabrication", "industrial-fasteners", "industrial-bolts", "industrial-nuts"];
 
-const products = [
-"ms-rod",
-"ms-pipe",
-"steel-plate",
-"steel-angle",
-"steel-channel",
-"steel-flat",
-"steel-round-bar",
-"gi-pipe",
-"ss-plate",
-"ss-rod",
-"sheet-metal",
-"laser-cutting",
-"cnc-machining",
-"fabrication-service",
-"machine-shop",
-"metal-cutting",
-"steel-fabrication",
-"industrial-fasteners",
-"industrial-bolts",
-"industrial-nuts"
-]
+const cities = ["vadodara", "bharuch", "ankleshwar", "savli-gidc", "makarpura-gidc", "halol", "dahej", "surat", "ahmedabad", "rajkot", "vapi", "valsad", "navsari", "gandhinagar", "jamnagar"];
 
-const cities = [
-"vadodara",
-"bharuch",
-"ankleshwar",
-"savli-gidc",
-"makarpura-gidc",
-"halol",
-"dahej",
-"surat",
-"ahmedabad",
-"rajkot",
-"vapi",
-"valsad",
-"navsari",
-"gandhinagar",
-"jamnagar"
-]
+const container = document.getElementById("seoLinks");
 
-const container = document.getElementById("seoLinks")
+// Helper to format text
+const format = (str) => str.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase());
 
 cities.forEach(city => {
+    const cityTitle = format(city);
+    
+    const section = document.createElement("section");
+    section.className = "city-section";
+    
+    // SEO: Wrapping city in H2
+    section.innerHTML = `<h2 class="city-title">Suppliers in ${cityTitle}</h2>`;
 
-const cityTitle = city.replaceAll("-", " ").replace(/\b\w/g,l=>l.toUpperCase())
+    const list = document.createElement("div");
+    list.className = "grid";
+    
+    products.forEach(product => {
+        const productTitle = format(product);
+        const card = document.createElement("div");
+        card.className = "card";
 
+        // SEO: Using "Near Me" or "In [City]" logic in anchor text is powerful
+        card.innerHTML = `
+            <a href="/products/${city}/${product}">
+                ${productTitle} Suppliers in ${cityTitle}
+            </a>
+        `;
+        list.appendChild(card);
+    });
+
+    section.appendChild(list);
+    container.appendChild(section);
+});
+</script>
+
+</body>
+</html>
 const section = document.createElement("div")
 
 section.innerHTML = `<h2>${cityTitle}</h2>`
