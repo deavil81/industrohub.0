@@ -1,3 +1,61 @@
+/* Add to css/style.css */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .cards {
+        flex-direction: column;
+    }
+    
+    .rfq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
 body{
 font-family: 'Inter', sans-serif;
 margin:0;
