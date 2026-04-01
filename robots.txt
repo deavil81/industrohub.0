@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://deavil81.github.io/industryhub_0/sitemap.xml
