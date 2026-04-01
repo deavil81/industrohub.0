@@ -5,130 +5,345 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industrial Suppliers Directory Gujarat | MS Rod, Pipes & Fabrication</title>
     <meta name="description" content="Find verified industrial suppliers in Gujarat. Directory for MS Rods, Steel Pipes, CNC Machining, and Fabrication services in Vadodara, Ahmedabad, Surat, and GIDC areas.">
-
+    <meta name="keywords" content="industrial suppliers, steel suppliers, MS rod, fabrication services, CNC machining, Gujarat industrial directory">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary: #1e3a8a; --bg: #f8fafc; --text: #0f172a; }
-        body { font-family: system-ui, sans-serif; line-height: 1.5; color: var(--text); margin: 0; background: #fff; }
-        
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .city-section { margin-top: 50px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
-        .city-title { color: var(--primary); font-size: 1.75rem; margin-bottom: 20px; text-transform: capitalize; }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 15px; 
+        /* Directory page specific styles */
+        .directory-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0 40px 0;
+            margin-bottom: 40px;
         }
         
-        .card { 
-            background: var(--bg); 
-            padding: 12px 16px; 
-            border-radius: 6px; 
+        .directory-header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .directory-header .intro-text {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .city-section {
+            margin-top: 50px;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 40px;
+        }
+        
+        .city-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        
+        .city-title {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .city-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #1e3a8a;
+            border-radius: 2px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        
+        .card {
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 8px;
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
+            transition: all 0.2s ease;
         }
-        .card:hover { transform: translateY(-2px); border-color: var(--primary); }
-        .card a { text-decoration: none; color: var(--primary); font-weight: 500; font-size: 0.95rem; display: block; }
         
-        .intro-text { font-size: 1.1rem; color: #475569; margin-bottom: 30px; }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .card a:hover {
+            color: #162c6a;
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .directory-header {
+                padding: 40px 0 30px 0;
+            }
+            
+            .directory-header h1 {
+                font-size: 28px;
+            }
+            
+            .directory-header .intro-text {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+            
+            .city-title {
+                font-size: 24px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .card {
+                padding: 12px 16px;
+            }
+            
+            .card a {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .directory-header h1 {
+                font-size: 24px;
+            }
+            
+            .city-title {
+                font-size: 22px;
+            }
+            
+            .city-title:after {
+                width: 50px;
+            }
+        }
+        
+        /* Breadcrumb navigation */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .breadcrumb a {
+            color: #1e3a8a;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Stats bar */
+        .stats-bar {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .stats-bar strong {
+            color: #1e3a8a;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
 
-<header style="background:#0f172a; color:white; padding:20px 0;">
-    <div class="container">
-        <strong style="font-size: 1.5rem;">IndustroHub</strong>
+<!-- Header -->
+<header>
+    <div class="container nav">
+        <h2 class="logo">IndustroHub</h2>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <nav id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="rfq.html">Post RFQ</a>
+            <a href="supplier.html">Suppliers</a>
+            <a href="supplier-rfq.html">View RFQs</a>
+            <a href="about.html">About</a>
+        </nav>
     </div>
 </header>
 
-<main class="container">
-    <section>
-        <h1>Industrial materials & Services Directory: Gujarat</h1>
+<!-- Directory Header -->
+<section class="directory-header">
+    <div class="container" style="text-align: center;">
+        <h1>Industrial Materials & Services Directory: Gujarat</h1>
         <p class="intro-text">
-            Connect with leading **steel trading agencies** and industrial service providers. 
-            Select a category below to find verified suppliers for MS materials, CNC services, and fabrication across major Gujarat GIDC hubs.
+            Connect with leading steel trading agencies and industrial service providers. 
+            Select a category below to find verified suppliers for MS materials, CNC services, 
+            and fabrication across major Gujarat GIDC hubs.
         </p>
-    </section>
+    </div>
+</section>
 
+<main class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> › 
+        <span>Industrial Directory</span>
+    </div>
+    
+    <!-- Stats Bar -->
+    <div class="stats-bar" id="statsBar">
+        Loading directory information...
+    </div>
+    
+    <!-- Dynamic Links Container -->
     <div id="seoLinks"></div>
+    
+    <!-- Back to Home -->
+    <div style="text-align: center; margin: 50px 0 30px;">
+        <a href="index.html" class="btn-primary" style="display: inline-block;">← Back to Home</a>
+    </div>
 </main>
 
-<script>
-const products = ["ms-rod", "ms-pipe", "steel-plate", "steel-angle", "steel-channel", "steel-flat", "steel-round-bar", "gi-pipe", "ss-plate", "ss-rod", "sheet-metal", "laser-cutting", "cnc-machining", "fabrication-service", "machine-shop", "metal-cutting", "steel-fabrication", "industrial-fasteners", "industrial-bolts", "industrial-nuts"];
+<!-- Footer -->
+<footer>
+    <div class="container footer">
+        <p>© 2026 IndustroHub</p>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="rfq.html">Post RFQ</a>
+            <a href="supplier.html">Suppliers</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+</footer>
 
-const cities = ["vadodara", "bharuch", "ankleshwar", "savli-gidc", "makarpura-gidc", "halol", "dahej", "surat", "ahmedabad", "rajkot", "vapi", "valsad", "navsari", "gandhinagar", "jamnagar"];
+<script src="js/mobile-menu.js"></script>
+
+<script>
+// Product categories
+const products = [
+    "ms-rod", "ms-pipe", "steel-plate", "steel-angle", "steel-channel", 
+    "steel-flat", "steel-round-bar", "gi-pipe", "ss-plate", "ss-rod", 
+    "sheet-metal", "laser-cutting", "cnc-machining", "fabrication-service", 
+    "machine-shop", "metal-cutting", "steel-fabrication", "industrial-fasteners", 
+    "industrial-bolts", "industrial-nuts"
+];
+
+// Cities in Gujarat
+const cities = [
+    "vadodara", "bharuch", "ankleshwar", "savli-gidc", "makarpura-gidc", 
+    "halol", "dahej", "surat", "ahmedabad", "rajkot", "vapi", "valsad", 
+    "navsari", "gandhinagar", "jamnagar", "anand", "nadiad", "mehsana"
+];
 
 const container = document.getElementById("seoLinks");
 
-// Helper to format text
-const format = (str) => str.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase());
+// Helper function to format text
+function formatText(str) {
+    return str.replaceAll("-", " ").replace(/\b\w/g, l => l.toUpperCase());
+}
 
+// Update stats bar
+function updateStats() {
+    const totalLinks = products.length * cities.length;
+    const statsBar = document.getElementById("statsBar");
+    if (statsBar) {
+        statsBar.innerHTML = `
+            📊 <strong>${products.length}</strong> product categories × 
+            <strong>${cities.length}</strong> industrial locations = 
+            <strong>${totalLinks}</strong> supplier listings
+        `;
+    }
+}
+
+// Generate all supplier links
 cities.forEach(city => {
-    const cityTitle = format(city);
+    const cityTitle = formatText(city);
     
+    // Create section for each city
     const section = document.createElement("section");
     section.className = "city-section";
     
-    // SEO: Wrapping city in H2
-    section.innerHTML = `<h2 class="city-title">Suppliers in ${cityTitle}</h2>`;
-
-    const list = document.createElement("div");
-    list.className = "grid";
+    // Add city title
+    const title = document.createElement("h2");
+    title.className = "city-title";
+    title.textContent = `Suppliers in ${cityTitle}`;
+    section.appendChild(title);
     
+    // Create grid for products
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    
+    // Add each product for this city
     products.forEach(product => {
-        const productTitle = format(product);
+        const productTitle = formatText(product);
         const card = document.createElement("div");
         card.className = "card";
-
-        // SEO: Using "Near Me" or "In [City]" logic in anchor text is powerful
+        
+        // Create link - using product.html with parameters
         card.innerHTML = `
-            <a href="/products/${city}/${product}">
+            <a href="product.html?item=${product}&city=${city}">
                 ${productTitle} Suppliers in ${cityTitle}
             </a>
         `;
-        list.appendChild(card);
+        
+        grid.appendChild(card);
     });
-
-    section.appendChild(list);
+    
+    section.appendChild(grid);
     container.appendChild(section);
+});
+
+// Update stats on page load
+updateStats();
+
+// Optional: Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
 </script>
 
 </body>
-</html>
-const section = document.createElement("div")
-
-section.innerHTML = `<h2>${cityTitle}</h2>`
-
-const list = document.createElement("div")
-list.className = "grid"
-products.forEach(product => {
-
-const productTitle = product.replaceAll("-", " ").replace(/\b\w/g,l=>l.toUpperCase())
-
-const li = document.createElement("div")
-li.className = "card"
-
-li.innerHTML = `
-<a href="product.html?item=${product}&city=${city}">
-${productTitle} Supplier ${cityTitle}
-</a>
-`
-
-list.appendChild(li)
-
-})
-
-section.appendChild(list)
-
-container.appendChild(section)
-
-})
-
-</script>
-
-
-
-</body>
-
 </html>
